@@ -6,6 +6,10 @@ from process.reconcile import fill_rows_and_cols, pre_process, reconcile
 
 
 class TestReconcile:
+    """
+    Tests for reconcile.py
+    """
+
     index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     brands = [
         "Peugeot",
@@ -98,28 +102,28 @@ class TestReconcile:
 
         # brand Tata present in file 1 but missing in file 2
         assert diff == {
-            "brands": [("Tata", None)],
+            "brands": [(10, "Tata", None)],
             "employees": [
-                (10, None),
-                (20, None),
-                (30, None),
-                (40, None),
-                (50, None),
-                (60, None),
-                (70, None),
-                (80, None),
-                (90, None),
-                (100, None),
+                (1, 10, None),
+                (2, 20, None),
+                (3, 30, None),
+                (4, 40, None),
+                (5, 50, None),
+                (6, 60, None),
+                (7, 70, None),
+                (8, 80, None),
+                (9, 90, None),
+                (10, 100, None),
             ],
             "sales_volume": [
-                ("20000", "10000"),
-                ("60000", "65000"),
-                ("80000", "70000"),
-                ("70000", "80000"),
-                ("100000", "13000"),
-                ("10000", "40000"),
-                ("50000", "90000"),
-                ("90000", "38000"),
-                ("30000", None),
+                (1, "20000", "10000"),
+                (2, "60000", "65000"),
+                (3, "80000", "70000"),
+                (5, "70000", "80000"),
+                (6, "100000", "13000"),
+                (7, "10000", "40000"),
+                (8, "50000", "90000"),
+                (9, "90000", "38000"),
+                (10, "30000", None),
             ],
         }
