@@ -1,0 +1,19 @@
+.file-upload,
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.card {
+  min-height: 50vh;
+  min-width: 40vw;
+  padding: 20px;
+}
+
+span {
+  color: red;
+  margin-top: 20px;
+}

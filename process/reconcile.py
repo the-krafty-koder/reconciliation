@@ -5,7 +5,7 @@ import numpy as np
 
 def fill_rows_and_cols(df1, df2):
     """
-    Prepare both dataframes for comparison by merging missing
+    This function prepares both dataframes for comparison by merging missing
     rows and columns and setting them to np.nan
 
     Parameters
@@ -92,7 +92,7 @@ def reconcile(df1, df2):
         )
 
         # store the difference as tuples
-        difference_as_tuple = list(cleaned.itertuples(index=False, name=None))
+        difference_as_tuple = list(cleaned.itertuples(index=True, name=None))
         results[column] = difference_as_tuple
 
     return results

@@ -1,8 +1,6 @@
-from textwrap import fill
 import numpy as np
 import pandas as pd
 import pytest
-import logging
 
 from process.reconcile import fill_rows_and_cols, pre_process, reconcile
 
@@ -72,7 +70,6 @@ class TestReconcile:
         )
 
         _, proc2 = pre_process(df1, df2)
-        logging.info(proc2)
 
         assert proc2.equals(df3) is True
 
@@ -87,8 +84,6 @@ class TestReconcile:
 
         assert proc1.equals(df1) is True
         assert "employees" in proc2.columns.values
-        # assert proc2.iloc[[10]] is np.nan
-        logging.info(f"empty ${proc2}")
 
     def test_reconcile(self):
         df1 = pd.DataFrame(self.first_quarter_data)
